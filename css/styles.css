@@ -4,7 +4,8 @@ body{
 
 main{
     background-color: #fff;
-    color: red;
+    color: brown;
+    padding: 30px;
     margin: auto;
     width: 500px;
     text-align: center;
