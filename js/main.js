@@ -35,7 +35,7 @@ let birthday = prompt('What is your birthday?');
 // confirms whether the birthday recieved is correct
 let verifyDate = confirm(`Is your birthday ${birthday}?`)
 // alerts the resulting birthday
-alert(birthday);
+alert(new Date(birthday);
 
 // Merge your takehome-day2 branch with gh-pages so I can test it
 // Send me the url of the gh-pages on Slack
