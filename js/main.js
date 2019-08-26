@@ -33,24 +33,24 @@
 // If the user is over 18, allow them to proceed, otherwise 
 // alert the user that they are not old enough.
 
-const ofAge = confirm("Are you over 18?");
+// const ofAge = confirm("Are you over 18?");
 
-if (ofAge == true){
-    alert("Great! Let's keep going.")
-} else if (ofAge != true){
-    alert('Bye, Felicia. Not old enough.');
-} 
-// Now that all your users at this point are at least 18,
-// ask if they are less than 80 years old.
- const underOldAge = confirm("Now, are you UNDER 80?");
-// Now ask the users who are between 18 and 80 if 
-// they like Star Wars. 
-// If they are over 80, ask if they like prunes.
-if (ofAge == true && underOldAge == true){
-    confirm("So...You like Stah Wahs?")
-} else if (underOldAge != true){
-    confirm("Do you like prunes?");
-}
+// if (ofAge == true){
+//     alert("Great! Let's keep going.")
+// } else if (ofAge != true){
+//     alert('Bye, Felicia. Not old enough.');
+// } 
+// // Now that all your users at this point are at least 18,
+// // ask if they are less than 80 years old.
+//  const underOldAge = confirm("Now, are you UNDER 80?");
+// // Now ask the users who are between 18 and 80 if 
+// // they like Star Wars. 
+// // If they are over 80, ask if they like prunes.
+// if (ofAge == true && underOldAge == true){
+//     confirm("So...You like Stah Wahs?")
+// } else if (underOldAge != true){
+//     confirm("Do you like prunes?");
+// }
 
 // If they say they don't Star Wars, end the program. In all other 
 // cases, alert them with a message.
@@ -60,7 +60,22 @@ if (ofAge == true && underOldAge == true){
 //     alert("Woop, woop!!");
 // }
 
+let nameQuestion = prompt(`What's your name, stranger?`)
 
+question = prompt(`How old are you, ${nameQuestion}?`);
 
+let returnValue = parseInt(question);
 
+if(returnValue >= 18){
+    alert(`You're old enough, ${nameQuestion}! Hooray!!`);
+} else {
+    alert(`Naw, sorry fam. C-ya.`)
+};
 
+if(returnValue >= 80){
+    alert(`You're doing great, dood!`);
+    prompt(`Do you like proonz?`)
+} else if(returnValue <= 80) {
+    prompt(`Do you like Stah Wahs at all?`)
+    alert(`Thak you for participating, ${nameQuestion}`)
+};
