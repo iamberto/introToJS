@@ -5,17 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Javascript GW Course</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <main id="mainDiv">
-        <h1>What am I getting out of this class?</h1>
-        <button type="button" class="btn btn-primary" onclick="classOutcomes()">Click this shizzz</button>
-        <h2>What are my hobbies, you ask?</h2>
-        <button type="button" class="btn btn-primary" onclick="myHobbies()">Click to find out!</button>        <script src="js/main.js"></script>
-    </main>    
-
-
-
+        <main class="container">
+                <div class="row">
+                    <section class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 id="greeting"></h1>
+                                <ul id="groceryList">
+                                    <li id="groceryItem1"></li>
+                                    <li id="groceryItem2"></li>
+                                    <li id="groceryItem3"></li>
+                                    <li id="groceryItem4"></li>
+                                    <li id="groceryItem5"></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="getGroceryItem">Add onto your groceries:</label>
+                                <input type="text" id="getGroceryItem">
+                                <button type="submit" onclick="addToList()" class="btn bg-primary">Submit</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
 </body>
 </html>
