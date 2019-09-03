@@ -10,18 +10,19 @@
 </head>
 <body>
     <main id="mainDiv">
-        <div class="row">
-            <div class="col-md-12">
-                <input type="text" id="temperatureInput">
-                <input type="button" value="" class="col-md-6 btn" id="selectFahrenheit">
-                <input type="button" value="" class="col-md-6 btn" id="celciusSelect">
-            </div>
+        <h1 class="convertTitle">Go ahead! Enter a value!</h1>
+        <input type="text" id="valueInput" placeholder="Enter Temperature">
+        <div class="btn btn-group">
+            <button type="button" class='btn btn-default' id="changeToFahrenheit">Convert to Fahrenheit</button>
+            <button type="button" class='btn btn-default' id="changeToCelcius">Convert to Celcius</button>
         </div>
 
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/main.js"></script>                    
-    </main>
+        <h3 id="valueOutput"></h3>
+
+     </main>
         
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/main.js"></script>                    
 
 </body>
 </html>
