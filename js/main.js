@@ -24,7 +24,9 @@ body.appendChild(container);
 
 //Add Form
 const form = document.createElement('form');
-form.setAttribute('name', 'emailForm')
+form.setAttribute('name', 'emailForm');
+form.setAttribute('method','GET');
+form.setAttribute('action', 'js/form-submission.js');
 form.className = 'text-center';
 
 //Add Email Input
@@ -51,19 +53,50 @@ inputTextArea.className = 'form-control';
 
 
 //Add Submit Button
-const submitButton = document.createElement('input');
-submitButton.className = 'btn btn-dark';
+const submitButton = document.createElement('button');
+submitButton.className = 'btn-primary btn form-control';
 submitButton.setAttribute('type', 'submit');
+submitButton.innerText = 'Submit here';
 
-//Append elements
-
-
+//Append elements to content 
 content.appendChild(form);
 
+//Append elements to form
 form.appendChild(inputEmail);
 form.appendChild(inputSubject);
 form.appendChild(inputTextArea);
 form.appendChild(submitButton);
+
+//create Label generator
+
+const labelGenerator = (forElement, text) => {
+    const label = document.createElement('label');
+    label.setAttribute('for', forElement);
+    label.innerText = text;
+    return label;
+}
+
+const labelForEmail = labelGenerator('email', 'Email');
+const labelForSubject = labelGenerator('subject', 'Subject');
+const labelForTextArea = labelGenerator('message', 'Message');
+
+const formGroup = document.createElement('div');
+formGroup.className = 'form-group';
+
+// Append Labels to subjects
+labelForEmail.appendChild(inputEmail);
+labelForSubject.appendChild(inputSubject);
+labelForTextArea.appendChild(inputTextArea);
+formGroup.appendChild(labelForEmail);
+formGroup.appendChild(labelForSubject);
+formGroup.appendChild(labelForTextArea);
+
+form.appendChild(formGroup);
+content.appendChild(form);
+
+
+
+
 
 // function globalFormElements(newElement, elementtype, elementName, elementClass, elementPlaceholder){
 //     //element : create the type of element you want
@@ -88,3 +121,5 @@ form.appendChild(submitButton);
 
 
 // }
+
+// make a global form function that will create a form (inside, call one dynamic input)method-what type, action-going to page
