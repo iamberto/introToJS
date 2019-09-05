@@ -1,0 +1,11 @@
+body, .row {
+    background-color: dodgerblue;
+}
+
+.content{
+    background-color: snow;
+    padding: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height:100vh;
+}
+

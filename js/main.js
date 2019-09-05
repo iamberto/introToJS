@@ -1,67 +1,90 @@
-let h1 = document.querySelector(`h1`);
+// Day Eight
+// email
+// subject
+// text area
 
-const container = document.querySelector('.container');
-console.log(container);
 
-function globalListItems() {
-    // create ul/ol with classes, attributes needed, create li with classes, attributes, or IDs needed 
+const body = document.body;
+const container = document.createElement('div');
+container.className = 'container text-center';
 
-    //create ul
-    const ul = document.createElement('ul');
-    const li = document.createElement('li');
-    //atributes/classes/id
-    li.className = 'list-group-item list-group-item-info';
-    li.innerText = 'I am a list item.';
-    li.id = 'mySpecialListItem';
+const row = document.createElement('main')
+row.className = 'row';
 
-    const image = document.createElement('img');
-    image.setAttribute('alt', 'This is an empty image container.');
-    console.log(image);
+const content = document.createElement('div');
 
-    //Append to container->ul->li
-    ul.appendChild(li);
+content.className = 'col-md-6 col-md-offset-2 content';
 
-    container.appendChild(ul);
-    
-}
+row.appendChild(content);
+container.appendChild(row);
+body.appendChild(container);
 
-globalListItems();
 
-function createDynamicCard() {
-    //create Elements needed for card
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'panel panel-default text-center col-md-6';
+// form tag > input.email - input.subject - text area - submit button
 
-    const h1 = document.createElement('h1');
-    h1.className = 'panel-title text-center';
-    h1.innerHTML = 'This is the title';
+//Add Form
+const form = document.createElement('form');
+form.setAttribute('name', 'emailForm')
+form.className = 'text-center';
 
-    const image = document.createElement('img');
-    image.className = 'col-md-4 img-responsive';
+//Add Email Input
+const inputEmail = document.createElement('input');
+inputEmail.setAttribute('name', 'inputEmail')
+inputEmail.setAttribute('type','email');
+inputEmail.setAttribute('placeholder', 'email')
+inputEmail.className = 'form-control'
 
-    const p = document.createElement('p');
-    p.innerText = 'Exhale, expel, Recast my tale, Read my allegorical elegy';
-
-    const icon = document.createElement('i'); 
-
-    console.log('this is the div: ', cardDiv);
-
-    //Append cardDiv to container
-
-    container.appendChild(cardDiv);
-    //Append child tags to cardDiv div
-    cardDiv.appendChild(h1);
-    cardDiv.appendChild(image);
-    cardDiv.appendChild(p);
-    cardDiv.appendChild(icon);
-
-    //add classes, IDs, and attributes
+//Add Email Subject
+const inputSubject = document.createElement('input');
+inputSubject.setAttribute('name', 'inputSubject');
+inputSubject.setAttribute('type', 'text');
+inputSubject.setAttribute('placeholder', 'Subject')
+inputSubject.className = 'form-control'
 
 
 
+//Add Email Text Area
+const inputTextArea = document.createElement('textarea');
+inputTextArea.setAttribute('name', 'inputTextArea');
+inputTextArea.setAttribute('type', 'textarea');
+inputTextArea.className = 'form-control';
 
 
+//Add Submit Button
+const submitButton = document.createElement('input');
+submitButton.className = 'btn btn-dark';
+submitButton.setAttribute('type', 'submit');
 
-}
+//Append elements
 
-createDynamicCard()
+
+content.appendChild(form);
+
+form.appendChild(inputEmail);
+form.appendChild(inputSubject);
+form.appendChild(inputTextArea);
+form.appendChild(submitButton);
+
+// function globalFormElements(newElement, elementtype, elementName, elementClass, elementPlaceholder){
+//     //element : create the type of element you want
+//     const newElement = document.createElement('type', elementtype);
+//     newElement.className = elementClass;
+//     newElement.setAttribute('name', 'elementName');
+//     newElement.setAttribute('placeholder', 'elementPlaceholder');
+//     return newElement;
+// };
+
+// console.log(globalFormElements('input', 'text', 'example', 'form-control bg-primary', 'Type your example here'));
+
+// const textAreaElement(name, placeholder, elementClass, placeholder, cols = 4, rows = 2) => {
+//     const element = document.createElement('textarea');
+//     element.setAttribute('type', 'text');
+//     element.setAttribute('name', 'name');
+//     element.setAttribute('placeholder', 'placeholder');
+//     element.setAttribute('cols', 'cols');
+//     element.setAttribute('rows', 'rows');
+//     element.id = elementId;
+//     return element;
+
+
+// }
