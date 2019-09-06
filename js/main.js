@@ -61,12 +61,6 @@ submitButton.innerText = 'Submit here';
 //Append elements to content 
 content.appendChild(form);
 
-//Append elements to form
-form.appendChild(inputEmail);
-form.appendChild(inputSubject);
-form.appendChild(inputTextArea);
-form.appendChild(submitButton);
-
 //create Label generator
 
 const labelGenerator = (forElement, text) => {
@@ -83,15 +77,24 @@ const labelForTextArea = labelGenerator('message', 'Message');
 const formGroup = document.createElement('div');
 formGroup.className = 'form-group';
 
-// Append Labels to subjects
-labelForEmail.appendChild(inputEmail);
-labelForSubject.appendChild(inputSubject);
-labelForTextArea.appendChild(inputTextArea);
+//Append elements to form
 formGroup.appendChild(labelForEmail);
+formGroup.appendChild(inputEmail);
 formGroup.appendChild(labelForSubject);
+formGroup.appendChild(inputSubject);
 formGroup.appendChild(labelForTextArea);
+formGroup.appendChild(inputTextArea);
+
+// Append Labels to subjects
+// labelForEmail.appendChild(inputEmail);
+// labelForSubject.appendChild(inputSubject);
+// labelForTextArea.appendChild(inputTextArea);
+
 
 form.appendChild(formGroup);
+form.appendChild(submitButton);
+
+
 content.appendChild(form);
 
 
