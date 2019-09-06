@@ -122,4 +122,4 @@ content.appendChild(form);
 
 // }
 
-// make a global form function that will create a form (inside, call one dynamic input)method-what type, action-going to page
+// make a global form function that will create a form (inside, call one dynamic input)method-what type, action-going to page, One big function > form function and create 
