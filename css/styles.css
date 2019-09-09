@@ -2,10 +2,9 @@ body, .row {
     background-color: dodgerblue;
 }
 
-.content{
+.formGroup{
     background-color: snow;
     padding: 2em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     min-height:100vh;
 }
-

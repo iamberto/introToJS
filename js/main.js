@@ -1,128 +1,64 @@
-// Day Eight
-// email
-// subject
-// text area
+// const formCreationFunction()
 
 
-const body = document.body;
-const container = document.createElement('div');
-container.className = 'container text-center';
-
-const row = document.createElement('main')
-row.className = 'row';
-
-const content = document.createElement('div');
-
-content.className = 'col-md-6 col-md-offset-2 content';
-
-row.appendChild(content);
-container.appendChild(row);
-body.appendChild(container);
-
-
-// form tag > input.email - input.subject - text area - submit button
-
-//Add Form
-const form = document.createElement('form');
-form.setAttribute('name', 'emailForm');
-form.setAttribute('method','GET');
-form.setAttribute('action', 'js/form-submission.js');
-form.className = 'text-center';
-
-//Add Email Input
-const inputEmail = document.createElement('input');
-inputEmail.setAttribute('name', 'inputEmail')
-inputEmail.setAttribute('type','email');
-inputEmail.setAttribute('placeholder', 'email')
-inputEmail.className = 'form-control'
-
-//Add Email Subject
-const inputSubject = document.createElement('input');
-inputSubject.setAttribute('name', 'inputSubject');
-inputSubject.setAttribute('type', 'text');
-inputSubject.setAttribute('placeholder', 'Subject')
-inputSubject.className = 'form-control'
+function letsGetThisCred(){
+    createForm();
+    labelGenerator();
+    const initializeButton = document.getElementById('clickyClick');
+    initializeButton.classList.add('hidden');
+}
 
 
 
-//Add Email Text Area
-const inputTextArea = document.createElement('textarea');
-inputTextArea.setAttribute('name', 'inputTextArea');
-inputTextArea.setAttribute('type', 'textarea');
-inputTextArea.className = 'form-control';
+function createFormInput(elementTag, elementType, elementName, elementMethod = '', elementAction, elementClass, elementPlaceholder, elementInnerText=''){
+    const formInput = document.createElement(elementTag);
+    formInput.setAttribute('type', elementType);
+    formInput.setAttribute('name', elementName);
+    formInput.setAttribute('method', elementMethod);
+    formInput.setAttribute('action', elementAction);
+    formInput.setAttribute('class', elementClass);
+    formInput.setAttribute('placeholder', elementPlaceholder);
+    formInput.innerText = elementInnerText;
+    return formInput;
 
 
-//Add Submit Button
-const submitButton = document.createElement('button');
-submitButton.className = 'btn-primary btn form-control';
-submitButton.setAttribute('type', 'submit');
-submitButton.innerText = 'Submit here';
 
-//Append elements to content 
-content.appendChild(form);
+}
 
-//create Label generator
+const createForm = () => {
+    let container = document.getElementById('container');
+    let form = createFormInput('form', '', 'myForm', 'GET', '','myForm','', '');
+    let inputName = createFormInput('input', 'text', '', '', '', 'form-control', '', '');
+    let inputEmail = createFormInput('input', 'email', 'email', '', '', 'form-control', '', '');
+    let inputText = createFormInput('textarea', 'text', '', '', '','form-control','', '');
+    let submitButton = createFormInput('button', 'submit', 'submit', '', '','btn btn-warning','', 'Submit');
+
+    
+
+    container.appendChild(form);
+    form.appendChild(labelForName);
+    form.appendChild(inputName);
+    form.appendChild(labelForEmail);
+    form.appendChild(inputEmail);
+    form.appendChild(labelForTextbox);
+    form.appendChild(inputText);
+    form.appendChild(submitButton);
+
+
+
+    // let container = document.getElementById('container');
+    // let form = inputCreation('form', '', 'formName', 'GET', 'js/formSubmission.js', 'inputform', '', '');
+}
 
 const labelGenerator = (forElement, text) => {
     const label = document.createElement('label');
     label.setAttribute('for', forElement);
     label.innerText = text;
-    return label;
+    return label; 
+
 }
 
-const labelForEmail = labelGenerator('email', 'Email');
-const labelForSubject = labelGenerator('subject', 'Subject');
-const labelForTextArea = labelGenerator('message', 'Message');
-
-const formGroup = document.createElement('div');
-formGroup.className = 'form-group';
-
-//Append elements to form
-formGroup.appendChild(labelForEmail);
-formGroup.appendChild(inputEmail);
-formGroup.appendChild(labelForSubject);
-formGroup.appendChild(inputSubject);
-formGroup.appendChild(labelForTextArea);
-formGroup.appendChild(inputTextArea);
-
-// Append Labels to subjects
-// labelForEmail.appendChild(inputEmail);
-// labelForSubject.appendChild(inputSubject);
-// labelForTextArea.appendChild(inputTextArea);
-
-
-form.appendChild(formGroup);
-form.appendChild(submitButton);
-
-
-content.appendChild(form);
-
-
-
-
-
-// function globalFormElements(newElement, elementtype, elementName, elementClass, elementPlaceholder){
-//     //element : create the type of element you want
-//     const newElement = document.createElement('type', elementtype);
-//     newElement.className = elementClass;
-//     newElement.setAttribute('name', 'elementName');
-//     newElement.setAttribute('placeholder', 'elementPlaceholder');
-//     return newElement;
-// };
-
-// console.log(globalFormElements('input', 'text', 'example', 'form-control bg-primary', 'Type your example here'));
-
-// const textAreaElement(name, placeholder, elementClass, placeholder, cols = 4, rows = 2) => {
-//     const element = document.createElement('textarea');
-//     element.setAttribute('type', 'text');
-//     element.setAttribute('name', 'name');
-//     element.setAttribute('placeholder', 'placeholder');
-//     element.setAttribute('cols', 'cols');
-//     element.setAttribute('rows', 'rows');
-//     element.id = elementId;
-//     return element;
-
-
-// }
-
-// make a global form function that will create a form (inside, call one dynamic input)method-what type, action-going to page, One big function > form function and create 
+const labelForEmail = labelGenerator('inputName', 'Name');
+const labelForName = labelGenerator('inputEmail', 'eMail');
+const labelForTextbox = labelGenerator('inputText', 'Ur Txt here');
+    //Append all the shizz
