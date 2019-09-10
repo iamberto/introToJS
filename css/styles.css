@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body, .row {
     background-color: dodgerblue;
 }
@@ -9,31 +9,3 @@ body, .row {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     min-height:100vh;
 }
-=======
-body {
-    background-color: skyblue;
-}
-
-main {
-    min-height: 100vh;
-}
-
-section {
-    background-color: #fff;
-    color: #333;
-    padding: 0.5em;
-}
-ul, li {
-    list-style: none;
-}
-
-li::before {
-    content: '- ';
-    font-weight: bold;
-}
-
-h1 {
-    font-style: italic;
-    color: skyblue;
-}
->>>>>>> gh-pages
