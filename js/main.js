@@ -1,65 +1,31 @@
+//Create taco recipe using prototype. First, to create what we need for recipe
 
-// const formCreationFunction()
-
-
-function letsGetThisCred(){
-    createForm();
-    labelGenerator();
-    const initializeButton = document.getElementById('clickyClick');
-    initializeButton.classList.add('hidden');
+function tacoRecipe(meat, seasonings, vegetables, tortilla){
+    this.meat = meat;
+    this.seasonings = seasonings;
+    this.vegetables = vegetables;
+    this.tortilla = tortilla;
 }
 
-
-
-function createFormInput(elementTag, elementType, elementName, elementMethod = '', elementAction, elementClass, elementPlaceholder, elementInnerText=''){
-    const formInput = document.createElement(elementTag);
-    formInput.setAttribute('type', elementType);
-    formInput.setAttribute('name', elementName);
-    formInput.setAttribute('method', elementMethod);
-    formInput.setAttribute('action', elementAction);
-    formInput.setAttribute('class', elementClass);
-    formInput.setAttribute('placeholder', elementPlaceholder);
-    formInput.innerText = elementInnerText;
-    return formInput;
-
-
-
+tacoRecipe.prototype.prepIngredients = function(){
+    console.log(`Get two pounds of ${this.meat} and add to pan. In a separate bowl, collect ${this.seasonings}. 
+    Make sure to get your ${this.vegetables} ready to wash and chop. Then dip the ${this.tortilla} in oil and
+    ready to fry.`);
 }
 
-const createForm = () => {
-    let container = document.getElementById('container');
-    let form = createFormInput('form', '', 'myForm', 'GET', '','myForm','', '');
-    let inputName = createFormInput('input', 'text', '', '', '', 'form-control', '', '');
-    let inputEmail = createFormInput('input', 'email', 'email', '', '', 'form-control', '', '');
-    let inputText = createFormInput('textarea', 'text', '', '', '','form-control','', '');
-    let submitButton = createFormInput('button', 'submit', 'submit', '', '','btn btn-warning','', 'Submit');
+const carnitasTaco = new tacoRecipe('carnitas', ['garlic powder', 'cumin', 'onion powder', 'salt and pepper'],['lemon',
+'tomatoes', 'onion', 'lettuce', 'raddish'], 'corn tortilla');
 
-    
+// carnitasTaco.prepIngredients();
 
-    container.appendChild(form);
-    form.appendChild(labelForName);
-    form.appendChild(inputName);
-    form.appendChild(labelForEmail);
-    form.appendChild(inputEmail);
-    form.appendChild(labelForTextbox);
-    form.appendChild(inputText);
-    form.appendChild(submitButton);
-
-
-
-    // let container = document.getElementById('container');
-    // let form = inputCreation('form', '', 'formName', 'GET', 'js/formSubmission.js', 'inputform', '', '');
+tacoRecipe.prototype.assembleTaco = function(){
+    console.log(`After you cook the ${this.meat}, use the ${this.seasonings} and fry the ${this.tortilla}, 
+    place some of the ${this.meat} inside of the ${this.tortilla}. Then top it with all the ${this.vegetables}.`)
 }
 
-const labelGenerator = (forElement, text) => {
-    const label = document.createElement('label');
-    label.setAttribute('for', forElement);
-    label.innerText = text;
-    return label; 
+const assembleAlPastorTaco = new tacoRecipe('Al Pastor', [' chile sauce', ' lime juice', ' pineapple chunks'], 
+['cabbage', 'raddish'], 'little corn tortilla');
 
-}
+assembleAlPastorTaco.assembleTaco();
 
-const labelForEmail = labelGenerator('inputName', 'Name');
-const labelForName = labelGenerator('inputEmail', 'eMail');
-const labelForTextbox = labelGenerator('inputText', 'Ur Txt here');
-    //Append all the shizz
+// tacoRecipe.prototype.tacoCost = function()
